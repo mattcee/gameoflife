@@ -10,3 +10,8 @@ import Foundation
 
 print("Hello, World!")
 
+let gameBoard = Board(with: 5)
+
+gameBoard.generate()
+
+gameBoard.printBoard()
