@@ -32,7 +32,7 @@ class Board: NSObject {
         for x in 0..<self.size {
             var line = ""
             for y in 0..<self.size {
-                line += self.board[y][x].life == .alive ? "1" : "0"
+                line += self.board[x][y].life == .alive ? "1" : "0"
                 line += " "
             }
             print(line)

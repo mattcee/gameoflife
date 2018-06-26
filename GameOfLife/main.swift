@@ -15,3 +15,16 @@ gameBoard.generate()
 let glider = Glider(with: gameBoard.board)
 gameBoard.board = glider.build()
 gameBoard.printBoard()
+
+
+
+func readLineLoop() {
+    print("Please enter some input\n")
+    if let _ = readLine() {
+        gameBoard.updateState()
+        gameBoard.printBoard()
+        readLineLoop()
+    }
+}
+
+readLineLoop()

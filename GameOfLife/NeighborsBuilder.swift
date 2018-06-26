@@ -56,7 +56,7 @@ class NeighborsBuilder: NSObject {
         }
         // Check cell on the top right.
         if x != size - 1 && y != 0 {
-            let cell = self.gameBoard[x+1][y+1]
+            let cell = self.gameBoard[x+1][y-1]
             neighbors.append(cell)
         }
         

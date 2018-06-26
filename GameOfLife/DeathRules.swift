@@ -18,6 +18,9 @@ class DeathRules: NSObject {
     
     // live cell with fewer than two live neighbors die
     func underPopulationCheck(cell: Cell) -> Cell {
+        if cell.life == .alive {
+            print("alive")
+        }
         let aliveCells = self.neighbors.filter { $0.life == .alive }
         if aliveCells.count < 2 {
             cell.life = .dead
