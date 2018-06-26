@@ -19,8 +19,13 @@ class Rules: NSObject {
     }
     
     func applyRules() -> Cell {
-        let deathRules = DeathRules(neighbors: neighbors)
-        let lifeRules = LifeRules(neighbors: neighbors)
+        let deathRules = DeathRules(neighbors: self.neighbors)
+        let lifeRules = LifeRules(neighbors: self.neighbors)
+        var newCell = self.cell
+        newCell = deathRules.underPopulationCheck(cell: newCell)
+        newCell = lifeRules.shouldLive(cell: newCell)
+        newCell = deathRules.overPopulationCheck(cell: newCell)
+        newCell = lifeRules.shouldBeReborn(cell: newCell)
         return cell
     }
 
