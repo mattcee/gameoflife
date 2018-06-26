@@ -38,5 +38,18 @@ class Board: NSObject {
             print(line)
         }
     }
+    
+    func updateState() {
+        let neighborBuilder = NeighborsBuilder(gameBoard: self.board)
+
+        for x in 0..<self.size {
+            for y in 0..<self.size {
+                let cell = self.board[x][y]
+                let neighbors = neighborBuilder.getNeighbor(x: x, y: y)
+                let rules = Rules(cell: cell, neighbors: neighbors)
+                self.board[x][y] = rules.applyRules()
+            }
+        }
+    }
 
 }
