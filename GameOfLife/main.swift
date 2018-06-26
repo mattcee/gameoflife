@@ -10,8 +10,8 @@ import Foundation
 
 print("Hello, World!")
 
-let gameBoard = Board(with: 5)
-
+let gameBoard = Board(with: 10)
 gameBoard.generate()
-
+let glider = Glider(with: gameBoard.board)
+gameBoard.board = glider.build()
 gameBoard.printBoard()
