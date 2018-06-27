@@ -12,7 +12,6 @@
 		2550129320E0CB0B002D624D /* LifeRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550129220E0CB0B002D624D /* LifeRules.swift */; };
 		2550129520E0D0C1002D624D /* NeighborsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550129420E0D0C1002D624D /* NeighborsBuilder.swift */; };
 		2550129720E1FFF7002D624D /* Glider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550129620E1FFF7002D624D /* Glider.swift */; };
-		2550129920E20A82002D624D /* Array2D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2550129820E20A82002D624D /* Array2D.swift */; };
 		259849E520DF8EAC0010A4E3 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259849E420DF8EAC0010A4E3 /* main.swift */; };
 		259849EC20DF8EBE0010A4E3 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259849EB20DF8EBE0010A4E3 /* Cell.swift */; };
 		259849EE20DF8EC90010A4E3 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259849ED20DF8EC90010A4E3 /* Board.swift */; };
@@ -36,7 +35,6 @@
 		2550129220E0CB0B002D624D /* LifeRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeRules.swift; sourceTree = "<group>"; };
 		2550129420E0D0C1002D624D /* NeighborsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeighborsBuilder.swift; sourceTree = "<group>"; };
 		2550129620E1FFF7002D624D /* Glider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Glider.swift; sourceTree = "<group>"; };
-		2550129820E20A82002D624D /* Array2D.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array2D.swift; sourceTree = "<group>"; };
 		259849E120DF8EAC0010A4E3 /* GameOfLife */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = GameOfLife; sourceTree = BUILT_PRODUCTS_DIR; };
 		259849E420DF8EAC0010A4E3 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		259849EB20DF8EBE0010A4E3 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 				2550129020E0CB03002D624D /* DeathRules.swift */,
 				2550129220E0CB0B002D624D /* LifeRules.swift */,
 				2550129420E0D0C1002D624D /* NeighborsBuilder.swift */,
-				2550129820E20A82002D624D /* Array2D.swift */,
 			);
 			path = GameOfLife;
 			sourceTree = "<group>";
@@ -144,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				259849E520DF8EAC0010A4E3 /* main.swift in Sources */,
-				2550129920E20A82002D624D /* Array2D.swift in Sources */,
 				2550128F20E0CAFB002D624D /* Rules.swift in Sources */,
 				259849EC20DF8EBE0010A4E3 /* Cell.swift in Sources */,
 				259849EE20DF8EC90010A4E3 /* Board.swift in Sources */,
