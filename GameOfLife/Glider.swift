@@ -22,32 +22,27 @@ class Glider: NSObject {
         
         //top
         if y != 0 {
-            let cell = Cell()
-            cell.life = .alive
+            let cell = Cell(life: .alive)
             self.board[x][y-1] = cell
         }
         // right
         if x != size - 1 {
-            let cell = Cell()
-            cell.life = .alive
+            let cell = Cell(life: .alive)
             self.board[x+1][y] = cell
         }
         // Check cell on the bottom right.
         if x != size - 1 && y != size - 1 {
-            let cell = Cell()
-            cell.life = .alive
+            let cell = Cell(life: .alive)
             self.board[x+1][y+1] = cell
         }
         // Check cell on the bottom.
         if y != size - 1 {
-            let cell = Cell()
-            cell.life = .alive
+            let cell = Cell(life: .alive)
             self.board[x][y+1] = cell
         }
         // Check cell on the bottom left.
         if x != 0 && y != size - 1 {
-            let cell = Cell()
-            cell.life = .alive
+            let cell = Cell(life: .alive)
             self.board[x-1][y+1] = cell
         }
         return self.board

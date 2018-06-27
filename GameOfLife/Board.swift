@@ -19,37 +19,46 @@ class Board: NSObject {
     }
     
     func generate() {
+        self.board = buildBoard()
+    }
+    
+    private func buildBoard() -> [[Cell]] {
+        var array = [[Cell]]()
         for _ in 0..<self.size {
             var row = [Cell]()
             for _ in 0..<self.size {
-                row.append(Cell())
+                row.append(Cell(life: .dead))
             }
-            self.board.append(row)
+            array.append(row)
         }
+        return array
     }
     
-    func printBoard() {
+    func printGame(board: [[Cell]]) {
         for x in 0..<self.size {
             var line = ""
             for y in 0..<self.size {
-                line += self.board[x][y].life == .alive ? "1" : "0"
+                line += board[y][x].life == .alive ? "1" : "0"
                 line += " "
             }
             print(line)
         }
+
     }
     
     func updateState() {
         let neighborBuilder = NeighborsBuilder(gameBoard: self.board)
-
+        var nextStateBoard = self.board
         for x in 0..<self.size {
             for y in 0..<self.size {
                 let cell = self.board[x][y]
                 let neighbors = neighborBuilder.getNeighbor(x: x, y: y)
                 let rules = Rules(cell: cell, neighbors: neighbors)
-                self.board[x][y] = rules.applyRules()
+                let newCell = rules.applyRules()
+                nextStateBoard[x][y] = newCell
             }
         }
+        self.board = nextStateBoard
     }
 
 }

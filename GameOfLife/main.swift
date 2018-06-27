@@ -8,14 +8,13 @@
 
 import Foundation
 
-print("Hello, World!")
 
-let size = 10
+let size = 25
 let gameBoard = Board(with: size)
 gameBoard.generate()
 let glider = Glider(with: gameBoard.board)
 gameBoard.board = glider.build(x: size / 2, y: size / 2)
-gameBoard.printBoard()
+gameBoard.printGame(board: gameBoard.board)
 
 
 
@@ -23,7 +22,7 @@ func readLineLoop() {
     print("Please enter some input\n")
     if let _ = readLine() {
         gameBoard.updateState()
-        gameBoard.printBoard()
+        gameBoard.printGame(board: gameBoard.board)
         readLineLoop()
     }
 }

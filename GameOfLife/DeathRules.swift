@@ -18,23 +18,26 @@ class DeathRules: NSObject {
     
     // live cell with fewer than two live neighbors die
     func underPopulationCheck(cell: Cell) -> Cell {
+        var tempCell = cell
         if cell.life == .alive {
-            print("alive")
+            let aliveCells = self.neighbors.filter { $0.life == .alive }
+            if aliveCells.count < 2 {
+                tempCell.life = .dead
+            }
         }
-        let aliveCells = self.neighbors.filter { $0.life == .alive }
-        if aliveCells.count < 2 {
-            cell.life = .dead
-        }
-        return cell
+        return tempCell
     }
     
     // live cell with more than three live neighbor dies
     func overPopulationCheck(cell: Cell) -> Cell {
-        let aliveCells = self.neighbors.filter { $0.life == .alive }
-        if aliveCells.count > 3 {
-            cell.life = .dead
+        var tempCell = cell
+        if tempCell.life == .alive {
+            let aliveCells = self.neighbors.filter { $0.life == .alive }
+            if aliveCells.count > 3 {
+                tempCell.life = .dead
+            }
         }
-        return cell
+        return tempCell
     }
 
 }

@@ -13,12 +13,8 @@ enum LifeType {
     case alive, dead
 }
 
-class Cell: NSObject {
+struct Cell {
     
     var life: LifeType
-    
-    override init() {
-        self.life = .dead
-    }
 
 }
