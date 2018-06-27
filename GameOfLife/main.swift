@@ -10,10 +10,11 @@ import Foundation
 
 print("Hello, World!")
 
-let gameBoard = Board(with: 10)
+let size = 10
+let gameBoard = Board(with: size)
 gameBoard.generate()
 let glider = Glider(with: gameBoard.board)
-gameBoard.board = glider.build()
+gameBoard.board = glider.build(x: size / 2, y: size / 2)
 gameBoard.printBoard()
 
 

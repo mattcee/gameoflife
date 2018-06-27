@@ -11,15 +11,14 @@ import Cocoa
 class Glider: NSObject {
     
     var board: [[Cell]]
+
     
     init(with board: [[Cell]]) {
         self.board = board
     }
     
-    func build() -> [[Cell]] {
+    func build(x: Int, y: Int) -> [[Cell]] {
         let size = self.board[0].count
-        let x = size / 2
-        let y = size / 2
         
         //top
         if y != 0 {
