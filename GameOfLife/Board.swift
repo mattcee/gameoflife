@@ -35,9 +35,9 @@ class Board: NSObject {
     }
     
     func printGame(board: [[Cell]]) {
-        for x in 0..<self.size {
+        for x in 0..<self.board.count {
             var line = ""
-            for y in 0..<self.size {
+            for y in 0..<self.board[x].count {
                 line += board[y][x].life == .alive ? "1" : "0"
                 line += " "
             }
@@ -49,8 +49,8 @@ class Board: NSObject {
     func updateState() {
         let neighborBuilder = NeighborsBuilder(gameBoard: self.board)
         var nextStateBoard = self.board
-        for x in 0..<self.size {
-            for y in 0..<self.size {
+        for x in 0..<self.board.count {
+            for y in 0..<self.board[x].count {
                 let cell = self.board[x][y]
                 let neighbors = neighborBuilder.getNeighbor(x: x, y: y)
                 let rules = Rules(cell: cell, neighbors: neighbors)

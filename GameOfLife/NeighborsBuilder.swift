@@ -19,42 +19,45 @@ class NeighborsBuilder: NSObject {
     func getNeighbor(x: Int, y: Int) -> [Cell] {
         let size = self.gameBoard[0].count
         var neighbors = [Cell]()
-        // Check cell on the right
-        if x != size - 1 {
-            let cell = self.gameBoard[x + 1][y]
-            neighbors.append(cell)
-        }
-        // Check cell on the bottom right.
-        if x != size - 1 && y != size - 1 {
-            let cell = self.gameBoard[x+1][y+1]
-            neighbors.append(cell)
-        }
-        // Check cell on the bottom.
-        if y != size - 1 {
-            let cell = self.gameBoard[x][y+1]
-            neighbors.append(cell)
-        }
-        // Check cell on the bottom left.
-        if x != 0 && y != size - 1 {
-            let cell = self.gameBoard[x-1][y+1]
-            neighbors.append(cell)
-        }
-        // Check cell on the left.
+        
+        //  left
         if x != 0 {
             let cell = self.gameBoard[x-1][y]
             neighbors.append(cell)
         }
-        // Check cell on the top left.
+        
+        //  right
+        if x != size - 1 {
+            let cell = self.gameBoard[x + 1][y]
+            neighbors.append(cell)
+        }
+        // bottom right
+        if x != size - 1 && y != size - 1 {
+            let cell = self.gameBoard[x+1][y+1]
+            neighbors.append(cell)
+        }
+        // bottom
+        if y != size - 1 {
+            let cell = self.gameBoard[x][y+1]
+            neighbors.append(cell)
+        }
+        // bottom left
+        if x != 0 && y != size - 1 {
+            let cell = self.gameBoard[x-1][y+1]
+            neighbors.append(cell)
+        }
+
+        // top left
         if x != 0 && y != 0 {
             let cell = self.gameBoard[x-1][y-1]
             neighbors.append(cell)
         }
-        // Check cell on the top.
+        //  top
         if y != 0 {
             let cell = self.gameBoard[x][y-1]
             neighbors.append(cell)
         }
-        // Check cell on the top right.
+        //  top right
         if x != size - 1 && y != 0 {
             let cell = self.gameBoard[x+1][y-1]
             neighbors.append(cell)
